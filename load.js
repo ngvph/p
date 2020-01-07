@@ -10,7 +10,9 @@
     function Plugin(element, options) {
         this.element = element;
 
-        this.settings = $.extend({}, defaults, options);
+        var data = $(element).data();
+
+        this.settings = $.extend({}, defaults, data, options);
         this._defaults = defaults;
         this._name = pluginName;
         this.init();
